@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku de Animalitos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overall-game-wrapper">
+        <header class="game-header">
+            <h1>SUDOKU</h1>
+        </header>
+
+        <div class="main-container">
+            <div id="player-info-screen" class="screen">
+                <div class="form-container">
+                    <h2>Información del Jugador</h2>
+                    <label for="playerName">Nombre:</label>
+                    <input type="text" id="playerName" placeholder="Escribe tu nombre">
+                    <label for="playerAge">Edad:</label>
+                    <input type="number" id="playerAge" placeholder="Escribe tu edad">
+                    <button id="continueToLevelSelectionBtn">Continuar</button>
+                    <p class="sub-text">Ingresa tus datos para comenzar</p>
+                </div>
+            </div>
+
+            <div id="level-selection-screen" class="screen hidden">
+                <h2>Elige un Nivel</h2>
+                <div id="animal-level-grid" class="level-grid">
+                    </div>
+            </div>
+
+            <div id="game-screen" class="screen hidden">
+                <div class="game-info-bar">
+                    <div class="current-player-info">
+                        Jugador: <span id="displayPlayerName"></span>, Edad: <span id="displayPlayerAge"></span>
+                    </div>
+                    <div class="game-stats">
+                        <div class="vidas-container">
+                            Vidas: <span id="displayVidas"></span>
+                        </div>
+                        <div class="current-level-animal">
+                            <span id="displayLevelName"></span>
+                            <img id="animalImage" src="" alt="Animal del Nivel">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sudoku-board-container">
+                     <div id="sudoku-board">
+                        </div>
+                </div>
+
+                <div class="game-actions">
+                    <button id="validateBtn">Revisar Solución</button>
+                    <button id="solveBtn">Mostrar Solución</button>
+                    <button id="backToLevelsBtn">Cambiar Nivel</button>
+                </div>
+                <p id="messageArea"></p>
+            </div>
+
+            <div id="stats-trigger-area" class="hidden" style="margin-top: 15px; text-align: center;">
+                <button id="showStatsBtn">Ver Resumen de Juego</button>
+            </div>
+            
+            <div id="stats-screen" class="screen hidden">
+                <div class="stats-content-wrapper">
+                    <h2>Resumen del Juego</h2>
+                    <div id="stats-player-info"></div>
+                    <div id="stats-summary"></div>
+                    <h3>Análisis de Habilidades:</h3>
+                    <p id="stats-analysis"></p>
+                    <div class="stats-actions">
+                        <button id="restartGameFromStatsBtn">Jugar de Nuevo</button>
+                        <button id="backToMenuFromStatsBtn">Volver al Menú Principal</button>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> <div id="win-level-animation-overlay" class="animation-overlay hidden">
+        <div class="animation-content">
+            ¡NIVEL SUPERADO!
+        </div>
+    </div>
+
+    <div id="game-over-animation-overlay" class="animation-overlay hidden">
+        <div class="animation-content">
+            ¡JUEGO TERMINADO!
+        </div>
+    </div>
+
+    <audio id="errorSound" src="sounds/error.mp3" preload="auto"></audio>
+    <audio id="aciertoSound" src="sounds/acierto.mp3" preload="auto"></audio>
+    <audio id="gameOverSound" src="sounds/gameover.mp3" preload="auto"></audio>
+    <audio id="victoriaSound" src="sounds/victoria.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
